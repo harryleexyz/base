@@ -1,4 +1,4 @@
-package com.harrylee.base.controller;
+package com.harrylee.base.web;
 
 import com.harrylee.base.BaseApplicationTests;
 import org.hamcrest.Matchers;
