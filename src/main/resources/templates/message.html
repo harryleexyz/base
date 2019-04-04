@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Message</title>
+</head>
+<body>
+<h1 th:text="${message}">Hello Java</h1>
+<ul>
+    <li th:text="'姓名：' + ${user.userName}">未知</li>
+    <li th:text="|姓名：${user.userName}|">未知</li>
+    <li th:text="'年龄：'+${user.age}">未知</li>
+    <li th:if="${user.age ge 18}">
+        <a th:href="@{http://www.baidu.com/}">百度</a> <a th:if="${user.sex eq '男'}" th:href="@{http://www.github.com/}">Github</a>
+        <ul th:switch="${user.sex}">
+            <li th:case="'男'">男孩子小哥哥</li>
+            <li th:case="'女'">女孩子小姐姐</li>
+        </ul>
+    </li>
+    <li th:inline="text">
+        用户名：[[${user.loginName}]]
+    </li>
+    <li th:inline="text">
+        密码：[[${user.password}]]
+    </li>
+    <script th:inline="javascript">
+        var remark = [[${user.remark}]];
+        console.log(remark);
+    </script>
+    <li>
+        <p th:text="${session.code}"></p>
+        <p th:text="${#request.getAttribute('req')}"></p>
+        <p th:text="${#locale.country}"></p>
+    </li>
+    <li th:text="${#strings.length(user.userName)}"></li>
+</ul>
+<div th:insert="copyright"></div>
+</body>
+</html>

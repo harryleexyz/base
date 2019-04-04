@@ -29,6 +29,18 @@ public class User {
     private String sex;
     private String remark;
 
+    public User() {
+    }
+
+    public User(String userName, String loginName, String password, Integer age, String sex, String remark) {
+        this.userName = userName;
+        this.loginName = loginName;
+        this.password = password;
+        this.age = age;
+        this.sex = sex;
+        this.remark = remark;
+    }
+
     public String getUserName() {
         return userName;
     }

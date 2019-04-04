@@ -3,3 +3,9 @@ server:
 
 user:
   userName: 'harry.lee'
+
+
+spring:
+  thymeleaf:
+    cache: false
+
